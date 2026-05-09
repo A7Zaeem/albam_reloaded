@@ -124,6 +124,7 @@ def export_arc(blender_object, file_path):
                     continue
                 setattr(tex, attr_name, getattr(blender_texture, attr_name))
 
+            os.makedirs(os.path.dirname(destination_path), exist_ok=True)
             with open(destination_path, 'wb') as w:
                 w.write(tex)
 
